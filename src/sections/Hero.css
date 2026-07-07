@@ -1,0 +1,105 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  overflow: hidden;
+  background-color: var(--color-canvas);
+}
+
+.hero__gradient {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background:
+    radial-gradient(circle at 30% 30%, #007cf055, transparent 60%),
+    radial-gradient(circle at 70% 40%, #7928ca44, transparent 60%),
+    radial-gradient(circle at 50% 70%, #50e3c244, transparent 60%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero__badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-mute);
+}
+
+.hero__name {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -2.4px;
+  line-height: 48px;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.hero__role {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-body);
+  margin: 0;
+}
+
+.hero__lead {
+  font-size: 16px;
+  color: var(--color-body);
+  line-height: 24px;
+  margin: 0;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.button:hover { opacity: 0.85; }
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.button--secondary {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline);
+}
+
+@media (max-width: 600px) {
+  .hero__name {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.28px;
+  }
+}
