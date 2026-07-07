@@ -15,11 +15,10 @@
 }
 
 .about__inner {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
-
 
 .about__title {
   font-size: 32px;

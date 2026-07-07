@@ -22,7 +22,7 @@ function Hero() {
           <a href="#projects" className="button button--primary" onClick={handleScrollToProjects}>
             Ver proyectos
           </a>
-          <a href="/cv-martina-barrenechea.pdf" className="button button--secondary" download>
+          <a href="/CV-Martina-Barrenechea.pdf" className="button button--secondary" download>
             Descargar CV
           </a>
         </div>

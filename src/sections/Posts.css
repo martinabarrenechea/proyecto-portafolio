@@ -2,19 +2,22 @@
   width: 100%;
   background-color: var(--color-canvas-soft);
   border-top: 1px solid var(--color-hairline);
-  padding: 96px 0;
+  padding: 64px 0 96px;
 }
 
 .posts__inner {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .posts__eyebrow {
+  display: block;
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-mute);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-body);
+  margin-bottom: 12px;
 }
 
 .posts__title {
@@ -22,7 +25,7 @@
   font-weight: 600;
   letter-spacing: -1.28px;
   color: var(--color-ink);
-  margin: 8px 0 40px;
+  margin: 0 0 40px;
 }
 
 .posts__grid {

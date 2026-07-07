@@ -4,11 +4,11 @@ import './Projects.css';
 const PROJECTS = [
   {
     id: 'proj-1',
-    name: 'Nombre del proyecto',
-    description: 'Descripción breve de qué resuelve el proyecto y tu rol en él.',
-    image: '/projects/proyecto-1.png',
-    tech: ['React', 'Node.js', 'SQLite'],
-    github: 'https://github.com/TU-USUARIO/repo-1',
+    name: 'Sistema de Reserva de Aulas',
+    description: 'Plataforma full-stack para gestionar la reserva de aulas, con autenticación real mediante Keycloak.',
+    image: '/projects/reserva-aulas.png',
+    tech: ['React', 'Node.js', 'Express', 'Sequelize', 'SQLite', 'Keycloak'],
+    github: 'https://github.com/martinabarrenechea/proyecto-reservaAulas-DDS.git', // reemplazar con tu link real
     demo: null,
   },
   {
