@@ -1,30 +1,39 @@
-.navbar {
+.navbar-wrapper {
     position: sticky;
     top: 0;
     z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    padding: 12px 24px;
+    width: 100%;
     background-color: var(--color-canvas);
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.navbar--scrolled {
+.navbar-wrapper--scrolled {
     border-bottom-color: var(--color-hairline);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02), 0px 2px 2px rgba(0, 0, 0, 0.04);
 }
 
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    height: 64px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 12px 24px;
+}
+
 .navbar__logo {
+    justify-self: start;
     display: flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
+    min-width: 0;
 }
 
 .navbar__logo-box {
+    flex-shrink: 0;
     font-weight: 600;
     font-size: 14px;
     color: var(--color-on-primary);
@@ -37,17 +46,13 @@
     font-weight: 500;
     font-size: 14px;
     color: var(--color-ink);
-}
-
-@media (max-width: 600px) {
-    .navbar__logo-name {
-        display: none;
-    }
-
-    /* en celu, que quede solo el logo */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .navbar__links {
+    justify-self: center;
     display: flex;
     gap: 4px;
     list-style: none;
@@ -63,6 +68,7 @@
     color: var(--color-body);
     text-decoration: none;
     border-radius: 9999px;
+    white-space: nowrap;
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -78,6 +84,7 @@
 }
 
 .navbar__actions {
+    justify-self: end;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -86,6 +93,7 @@
 .navbar__lang {
     display: flex;
     gap: 4px;
+    flex-shrink: 0;
 }
 
 .navbar__lang-btn {
@@ -108,14 +116,119 @@
     font-size: 14px;
     color: var(--color-body);
     text-decoration: none;
+    display: flex;
 }
 
 .navbar__social:hover {
     color: var(--color-ink);
 }
 
-@media (max-width: 600px) {
+.navbar__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.navbar__burger-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-ink);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar__burger-line--open-1 {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.navbar__burger-line--open-2 {
+    opacity: 0;
+}
+
+.navbar__burger-line--open-3 {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Overlay del menú mobile: pantalla completa */
+.navbar__mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background-color: var(--color-canvas);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar__mobile-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: var(--color-ink);
+    cursor: pointer;
+    line-height: 1;
+    padding: 8px;
+}
+
+.navbar__mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar__mobile-link {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-body);
+    text-decoration: none;
+    letter-spacing: -0.6px;
+}
+
+.navbar__mobile-link--active {
+    color: var(--color-ink);
+}
+
+.navbar__mobile-socials {
+    display: flex;
+    gap: 24px;
+}
+
+/* El nombre completo aguanta hasta pantallas bien angostas */
+@media (max-width: 480px) {
+    .navbar__logo-name {
+        display: none;
+    }
+}
+
+/* A los 700px: layout pasa a flex de 2 puntas, aparece hamburguesa */
+@media (max-width: 700px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .navbar__links {
         display: none;
+    }
+
+    .navbar__social {
+        display: none;
+    }
+
+    .navbar__burger {
+        display: flex;
     }
 }

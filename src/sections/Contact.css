@@ -1,8 +1,14 @@
-/* src/sections/Contact.css */
 .contact {
+  width: 100%;
+  background-color: var(--color-canvas-soft);
+  border-top: 1px solid var(--color-hairline);
+  padding: 96px 0;
+}
+
+.contact__inner {
   max-width: 700px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 0 24px;
   text-align: center;
 }
 

@@ -1,26 +1,26 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 64px 24px;
+  padding: 80px 24px;
   overflow: hidden;
-  background-color: var(--color-canvas);
+  background-color: var(--color-canvas-soft);
 }
 
 .hero__gradient {
   position: absolute;
-  top: -20%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 500px;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
   background:
     radial-gradient(circle at 30% 30%, #007cf055, transparent 60%),
     radial-gradient(circle at 70% 40%, #7928ca44, transparent 60%),
     radial-gradient(circle at 50% 70%, #50e3c244, transparent 60%);
-  filter: blur(60px);
+  filter: blur(70px);
   pointer-events: none;
 }
 
@@ -83,7 +83,9 @@
   transition: opacity 0.15s ease;
 }
 
-.button:hover { opacity: 0.85; }
+.button:hover {
+  opacity: 0.85;
+}
 
 .button--primary {
   background-color: var(--color-primary);

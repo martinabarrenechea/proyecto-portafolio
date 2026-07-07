@@ -1,15 +1,25 @@
-/* src/sections/About.css */
 .about {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 96px 24px;
+  width: 100%;
+  background-color: var(--color-canvas-soft);
+  border-top: 1px solid var(--color-hairline);
+  padding: 64px 0 96px;
 }
 
 .about__eyebrow {
+  display: block;
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-mute);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-body);
+  margin-bottom: 12px;
 }
+
+.about__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 
 .about__title {
   font-size: 32px;
@@ -51,7 +61,7 @@
 }
 
 .about__stack {
-  background-color: var(--color-canvas-soft);
+  background-color: var(--color-canvas);
   border-radius: 8px;
   padding: 24px;
   height: fit-content;
@@ -82,7 +92,7 @@
 .about__tag {
   font-size: 13px;
   color: var(--color-ink);
-  background-color: var(--color-canvas);
+  background-color: var(--color-canvas-soft);
   border: 1px solid var(--color-hairline);
   border-radius: 9999px;
   padding: 4px 12px;

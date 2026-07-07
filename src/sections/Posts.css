@@ -1,8 +1,14 @@
-/* src/sections/Posts.css */
 .posts {
+  width: 100%;
+  background-color: var(--color-canvas-soft);
+  border-top: 1px solid var(--color-hairline);
+  padding: 96px 0;
+}
+
+.posts__inner {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 0 24px;
 }
 
 .posts__eyebrow {
@@ -28,6 +34,7 @@
 .post-card {
   display: block;
   padding: 20px;
+  background-color: var(--color-canvas);
   border: 1px solid var(--color-hairline);
   border-radius: 8px;
   text-decoration: none;
@@ -52,7 +59,7 @@
 }
 
 .posts__empty {
-  background-color: var(--color-canvas-soft);
+  background-color: var(--color-canvas);
   border-radius: 8px;
   padding: 48px 24px;
   text-align: center;
@@ -70,5 +77,7 @@
 }
 
 @media (max-width: 600px) {
-  .posts__grid { grid-template-columns: 1fr; }
+  .posts__grid {
+    grid-template-columns: 1fr;
+  }
 }

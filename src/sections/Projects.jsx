@@ -1,4 +1,4 @@
-// src/sections/Projects.jsx
+import Reveal from '../components/Reveal';
 import './Projects.css';
 
 const PROJECTS = [
@@ -9,7 +9,7 @@ const PROJECTS = [
     image: '/projects/proyecto-1.png',
     tech: ['React', 'Node.js', 'SQLite'],
     github: 'https://github.com/TU-USUARIO/repo-1',
-    demo: null, // poné la URL si tiene demo, o dejá null
+    demo: null,
   },
   {
     id: 'proj-2',
@@ -56,16 +56,20 @@ function ProjectCard({ project }) {
 
 function Projects() {
   return (
-    <section id="projects" className="projects">
-      <span className="projects__eyebrow">PROYECTOS</span>
-      <h2 className="projects__title">Algunos de los proyectos en los que trabajé</h2>
+    <Reveal>
+      <section id="projects" className="projects">
+        <div className="projects__inner">
+          <span className="projects__eyebrow">PROYECTOS</span>
+          <h2 className="projects__title">Algunos de los proyectos en los que trabajé</h2>
 
-      <div className="projects__grid">
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-    </section>
+          <div className="projects__grid">
+            {PROJECTS.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </Reveal>
   );
 }
 
